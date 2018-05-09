@@ -1,15 +1,4 @@
 $(function() {
-    // var burgers;
-
-    // function getBurger() {
-    //     $.get("/", function(data) {
-    //         burgers = data;
-    //         console.log("this is the obj" + burgers);
-    //     });
-    // };
-
-    // getBurger();
-
 
 
     $(".change-devoured").on("click", function(event) {

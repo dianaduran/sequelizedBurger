@@ -6,22 +6,16 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
         db.Burger.findAll({}).then(function(burgers) {
-            // var hbsObject = {
-            //     burgers: dbPost
-            // };
-            // res.render("index", { burgers });
             return res.render('index', { burgers })
-            console.log(burgers.id);
         });
     });
 
     app.post("/api/burger/:name", function(req, res) {
         var val = req.params.name;
-        // console.log("el body es " + req.body.name);
+
         db.Burger.create({
             burger_name: val,
         }).then(function(dbPost) {
-            // We have access to the new todo as an argument inside of the callback function
             res.json(dbPost);
         });
     });
@@ -37,6 +31,16 @@ module.exports = function(app) {
             }
         }).then(function(result) {
 
+            res.json(result);
+        });
+    });
+
+    app.delete("/api/burger/", function(req, res) {
+        db.Burger.destroy({
+            where: {
+                devoured: 1
+            }
+        }).then(function(result) {
             res.json(result);
         });
     });
