@@ -1,0 +1,48 @@
+body {
+    background-image: url("/assets/img/McDonalds-Logo.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container-fluid {
+    margin-top: 40px;
+}
+
+li {
+    list-style: none
+}
+
+.btn-lg {
+    margin: 10px;
+    width: 80%
+}
+
+h2 {
+    font-size: 40px !important;
+    text-align: center;
+    color: white !important;
+    font-family: 'Gugi', cursive !important;
+}
+
+.text-footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%
+}
+
+.input-group {
+    display: -webkit-box !important;
+    margin-right: 92px;
+}
+
+.class-alt {
+    height: 56px !important;
+}
+
+button[type=submit] {
+    font-size: 29px;
+    background-color: red;
+    color: white
+}

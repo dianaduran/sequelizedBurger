@@ -1,0 +1,60 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+<h2>Burger that are not devoured!</h2>
+
+  <ul>
+    {{#each burgers}}
+         
+      {{#unless devoured}}
+    
+      {{> burger/burger-block devoured=true}} 
+ 
+      {{/unless}}
+
+   {{/each}}
+  </ul>
+</div>
+<div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h2>Burger that are devoured!</h2>
+
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          <div class="bur-dev">
+        <button type="button" class="btn btn-default btn-lg"  data-id="{{id}}" disabled>
+        <span class="glyphicon glyphicon-piggy-bank"></span> 	{{burger_name}} 
+        </button>
+        </div>
+        </li>
+        
+        {{/if}}
+      {{/each}}
+    </ul>
+    <div class="text-center">
+    <button type="button" class="btn btn-primary class-alt" style="font-size: 17px" id="clear">
+	    <i class="glyphicon glyphicon-trash"></i> Delete Burger
+	</button>
+  </div>
+</div>
+</div>
+
+
+<div class="text-footer">
+<form class="create-form">
+ <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary class-alt" type="submit" id="btn-search"> <i class="glyphicon glyphicon-check"></i></button>
+  </div>
+  <input type="text" class="form-control class-alt" placeholder="Add Burger" aria-label="" aria-describedby="basic-addon1" name="burger_name" id="bu">
+</div>
+
+</form>
+</div>
+</div>
+
+
+
